@@ -14,12 +14,12 @@ Lightweight, tag database query analyzer and recommendation algorithm
 - Simple design to help developers modify program to work with other datasets
 - Lightweight: Get up and running within 10 minutes on a toaster; no data-specific machine learning training/smoothing needed!
 
-> [!INFO]
+> [!NOTE]
 > This is the public/demo release of TAG.
 > 
 > This demo is geared towards a publicly-available Stack Overflow scrape of 1.2 million questions containing 3.7 million instances of ~37,000 unique tags.
 > 
-> The [Perfomance section](#performance) of this README goes into detail about the algorithms used by TAG, including solutions to bottlenecks encountered with private datasets.
+> The [Performance section](#performance) of this README goes into detail about the algorithms used by TAG, including solutions to bottlenecks encountered with private datasets.
 
 ## How To Use
 
@@ -90,6 +90,7 @@ python sql -sql-server
 #### tag_counts.md:
 A simple count of tags, ranked by number of instances in the query (not the database).
 ```text
+### Tag Counts
 maps 547
 android 118
 google-maps 101
@@ -97,7 +98,7 @@ javascript 99
 (...)
 ```
 #### similar_tags.md:
-A ranked list of tags, based on a [formula derived from TF-IDF](#Recommendation Algorithm: Basics).
+A ranked list of tags, based on a [formula derived from TF-IDF](#Recommendation Algorithm Basics).
 The columns in the analyzed data help differentiate if a tag was ranked similar because it is very popular across the dataset (TF) versus tags that occupy a niche that overlaps with the query (IDF).
 
 Columns:
@@ -192,7 +193,7 @@ Memory Hogs:
 >- Prune posts from the original database to contain only "active" posts
 >- Condense each post to contain only data used by TAG
 >- Disable multi-core processing if large queries are detected during pre-processing
-### Recommendation Algorithm: Basics
+### Recommendation Algorithm Basics
 Goal:
 	The goal of the recommendation algorithm is to output a list of tags ranked by semantic similarity to the input query.
 		Example: If someone searches for "math," then "algebra" should be recommended before "furniture."
