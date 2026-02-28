@@ -2,7 +2,7 @@
 
 >"Data science for a simpler time"
 
-Lightweight, tag database query analyzer and recommendation algorithm
+Lightweight, performant tag database query analyzer and recommendation algorithm
 - Run via command line
 - Analysis output stored on disk
 	- Study as-is (with text/image viewer of choice)
@@ -98,7 +98,7 @@ javascript 99
 (...)
 ```
 #### similar_tags.md:
-A ranked list of tags, based on a [formula derived from TF-IDF](#Recommendation Algorithm Basics).
+A ranked list of tags, based on a formula derived from TF-IDF.
 The columns in the analyzed data help differentiate if a tag was ranked similar because it is very popular across the dataset (TF) versus tags that occupy a niche that overlaps with the query (IDF).
 
 Columns:
@@ -256,4 +256,3 @@ The main runtime bottlenecks for the program are plotting the matplotlib (MPL) c
 
 ---
 2026 Oliver Pardi
-///
